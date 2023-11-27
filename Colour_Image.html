@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Colour Image Page</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-center">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GAN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Colour_Image.html" class="nav-link">Colour Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Transform_Image.html" class="nav-link">Transform Image</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center mt-5">
+        <h1>Colour Image Page</h1>
+
+        <!-- Upload Form -->
+        <form id="image-upload-form" enctype="multipart/form-data">
+            <input type="file" id="image-file" accept="image/*" />
+            <button type="button" id="upload-button" class="btn btn-primary">Upload Image</button>
+        </form>
+
+        <!-- Display Uploaded Image -->
+        <div>
+            <h3>Uploaded Image:</h3>
+            <img id="uploaded-image" src="#" alt="Uploaded Image" style="max-width: 400px;" />
+        </div>
+
+        <!-- Download Result Button -->
+        <button id="download-button" class="btn btn-success" style="display: none;">Download Result</button>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Function to handle image uploaddd
+        document.getElementById("upload-button").addEventListener("click", function () {
+            const imageFile = document.getElementById("image-file").files[0];
+            if (imageFile) {
+                const imageURL = URL.createObjectURL(imageFile);
+                document.getElementById("uploaded-image").src = imageURL;
+                document.getElementById("download-button").style.display = "block";
+            }
+        });
+
+        // result download  need to implement this
+        document.getElementById("download-button").addEventListener("click", function () {
+            // Implement your logic for downloading the result here
+        });
+    </script>
+</body>
+
+</html>
